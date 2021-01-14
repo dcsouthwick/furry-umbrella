@@ -29,6 +29,5 @@ RUN \
     curl -s -L https://nvidia.github.io/nvidia-container-runtime/$distribution/nvidia-container-runtime.repo | tee /etc/yum.repos.d/nvidia-container-runtime.repo && \
     # install & verify
     # dnf install -y -q epel-release dnf-plugins-core && \
-    dnf install -y --setopt=tsflags=nodocs $DEPS && \
-    rpm -V $DEPS && \
+    dnf install -y --setopt=tsflags=nodocs epel-release $DEPS && \
     dnf -y clean all --enablerepo='*'
